@@ -66,6 +66,8 @@ int	main(int argc, char **argv)
 
 	info.argc = argc - 1;
 	info.argv = argv;
+	info.stack.head_a = info.argc - 1;
+	info.stack.head_b = -1;
 	stack_argv(&info);
 	if (info.argc >= 7)
 		sort_case_over7(&info);

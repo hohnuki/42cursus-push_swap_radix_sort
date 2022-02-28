@@ -34,7 +34,11 @@ void	stack_debug(t_info *info);
 void	sort_case_over7(t_info *info);
 
 //operation_rotate.c
+void	ra(t_info *info);
+void	rb(t_info *info);
 
 //operation_push.c
+void	pb(t_info *info);
+void	pa(t_info *info);
 
 #endif
