@@ -47,6 +47,10 @@ void	sb(t_info *info);
 void	ra(t_info *info);
 void	rb(t_info *info);
 
+//operation_reverse_rotate.c
+void	rra(t_info *info);
+void	rrb(t_info *info);
+
 //operation_push.c
 void	pb(t_info *info);
 void	pa(t_info *info);

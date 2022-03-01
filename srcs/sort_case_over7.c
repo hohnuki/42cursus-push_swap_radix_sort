@@ -10,7 +10,7 @@ void	sort_case_over7(t_info *info)
 	i = 1;
 	k = 0;
 	pb_count = 0;
-	while (i < 100)
+	while (i < 500)
 	{
 //		stack_debug(info);
 		j = info->argc - 1;
