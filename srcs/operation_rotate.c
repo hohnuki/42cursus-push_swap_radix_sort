@@ -26,3 +26,30 @@ void	ra(t_info *info)
 	}
 	info->stack.compression_a[0] = tmp_compression_a;
 }
+
+void	rb(t_info *info)
+{
+	int	tmp_b;
+	int	tmp_compression_b;
+	int	i;
+
+	printf("rb\n");
+	i = info->stack.head_a;
+//	printf("\x1b[36m[i = %d]\n\033[m", i);
+	tmp_b = info->stack.b[i];
+//	printf("\x1b[36m[tmp_a = %d]\n\033[m", tmp_b);
+	while (i > 0)
+	{
+		info->stack.b[i] = info->stack.b[i - 1];
+		i--;
+	}
+	info->stack.b[0] = tmp_b;
+	i = info->stack.head_b;
+	tmp_compression_b = info->stack.compression_b[i];
+	while (i > 0)
+	{
+		info->stack.compression_b[i] = info->stack.compression_b[i - 1];
+		i--;
+	}
+	info->stack.compression_b[0] = tmp_compression_b;
+}
