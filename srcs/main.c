@@ -72,10 +72,13 @@ int	main(int argc, char **argv)
 	info.stack.head_a = info.argc - 1;
 	info.stack.head_b = -1;
 	stack_argv(&info);
-	if (info.argc == 3)
+	if (info.argc == 2)
+		sort_case_2(&info);
+	else if (info.argc == 3)
 		sort_case_3(&info);
 	else if(info.argc >= 7)
 		sort_case_over7(&info);
 //	stack_debug(&info);
+	free_element(&info);
 }
 

@@ -30,11 +30,18 @@ typedef struct s_info
 //stack_debug.c
 void	stack_debug(t_info *info);
 
+//sort_case_2.c
+void	sort_case_2(t_info *info);
+
 //sort_case_3.c
 void	sort_case_3(t_info *info);
 
 //sort_case_over7.c
 void	sort_case_over7(t_info *info);
+
+//operation_swap.c
+void	sa(t_info *info);
+void	sb(t_info *info);
 
 //operation_rotate.c
 void	ra(t_info *info);
@@ -43,5 +50,8 @@ void	rb(t_info *info);
 //operation_push.c
 void	pb(t_info *info);
 void	pa(t_info *info);
+
+//free.c
+void	free_element(t_info *info);
 
 #endif
