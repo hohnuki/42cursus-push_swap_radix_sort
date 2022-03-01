@@ -34,7 +34,7 @@ void	rb(t_info *info)
 	int	i;
 
 	printf("rb\n");
-	i = info->stack.head_a;
+	i = info->stack.head_b;
 //	printf("\x1b[36m[i = %d]\n\033[m", i);
 	tmp_b = info->stack.b[i];
 //	printf("\x1b[36m[tmp_a = %d]\n\033[m", tmp_b);

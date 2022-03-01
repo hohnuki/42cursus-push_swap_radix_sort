@@ -23,7 +23,7 @@ void	sb(t_info *info)
 	tmp = 0;
 	printf("sb\n");
 	tmp = info->stack.b[info->stack.head_b];
-	info->stack.b[info->stack.head_b] = info->stack.a[info->stack.head_b - 1];
+	info->stack.b[info->stack.head_b] = info->stack.b[info->stack.head_b - 1];
 	info->stack.b[info->stack.head_b - 1] = tmp;
 
 	tmp = 0;
