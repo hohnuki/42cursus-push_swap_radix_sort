@@ -6,7 +6,7 @@ void	ra(t_info *info)
 	int	tmp_compression_a;
 	int	i;
 
-	printf("ra \n");
+	printf("ra\n");
 	i = info->stack.head_a;
 //	printf("\x1b[36m[i = %d]\n\033[m", i);
 	tmp_a = info->stack.a[i];

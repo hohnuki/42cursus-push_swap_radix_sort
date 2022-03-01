@@ -30,6 +30,9 @@ typedef struct s_info
 //stack_debug.c
 void	stack_debug(t_info *info);
 
+//sort_case_3.c
+void	sort_case_3(t_info *info);
+
 //sort_case_over7.c
 void	sort_case_over7(t_info *info);
 

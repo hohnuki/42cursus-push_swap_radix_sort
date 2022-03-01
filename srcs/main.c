@@ -51,14 +51,16 @@ void	stack_argv(t_info *info)
 	info->stack.compression_a = ft_calloc(info->argc, sizeof(int));
 	info->stack.b = ft_calloc(info->argc, sizeof(int));
 	info->stack.compression_b = ft_calloc(info->argc, sizeof(int));
-	int	i = info->argc - 1;
-	while (i >= 0)
+	int i = 0;
+	int	j = info->argc;
+	while (i < info->argc)
 	{
-		info->stack.a[i] = ft_atoi(info->argv[i + 1]);
-		i--;
+		info->stack.a[i] = ft_atoi(info->argv[j]);
+		i++;
+		j--;
 	}
-	stack_debug(info);
 	compression_array(info);
+//	stack_debug(info);
 }
 
 int	main(int argc, char **argv)
@@ -70,7 +72,10 @@ int	main(int argc, char **argv)
 	info.stack.head_a = info.argc - 1;
 	info.stack.head_b = -1;
 	stack_argv(&info);
-//	if (info.argc >= 7)
-//		sort_case_over7(&info);
+	if (info.argc == 3)
+		sort_case_3(&info);
+	else if(info.argc >= 7)
+		sort_case_over7(&info);
+//	stack_debug(&info);
 }
 
