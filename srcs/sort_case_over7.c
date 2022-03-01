@@ -10,7 +10,7 @@ void	sort_case_over7(t_info *info)
 	i = 1;
 	k = 0;
 	pb_count = 0;
-	while (i < 500)
+	while (i < 500)//TODO:ここの数字を変数化する
 	{
 //		stack_debug(info);
 		j = info->argc - 1;

@@ -36,6 +36,9 @@ void	sort_case_2(t_info *info);
 //sort_case_3.c
 void	sort_case_3(t_info *info);
 
+//sort_case_under_6.c
+void	sort_case_under_6(t_info *info);
+
 //sort_case_over7.c
 void	sort_case_over7(t_info *info);
 
