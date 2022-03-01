@@ -42,15 +42,22 @@ void	compression_array(t_info *info)
 		}
 		i++;
 	}
-//	stack_debug(info);
 }
 
 void	stack_argv(t_info *info)
 {
 	info->stack.a = ft_calloc(info->argc, sizeof(int));
+	if (info->stack.a == NULL)
+		error_message(info, "info->stack.a is not allocated.");
 	info->stack.compression_a = ft_calloc(info->argc, sizeof(int));
+	if (info->stack.compression_a == NULL)
+		error_message(info, "info->stack.compression_a is not allocated.");
 	info->stack.b = ft_calloc(info->argc, sizeof(int));
+	if (info->stack.b == NULL)
+		error_message(info, "info->stack.b is not allocated.");
 	info->stack.compression_b = ft_calloc(info->argc, sizeof(int));
+	if (info->stack.compression_b == NULL)
+		error_message(info, "info->stack.compression_b is not allocated.");
 	int i = 0;
 	int	j = info->argc;
 	while (i < info->argc)
@@ -60,7 +67,7 @@ void	stack_argv(t_info *info)
 		j--;
 	}
 	compression_array(info);
-//	stack_debug(info);
+	stack_debug(info);
 }
 
 int	main(int argc, char **argv)
@@ -80,7 +87,7 @@ int	main(int argc, char **argv)
 		sort_case_under_6(&info);
 	else if(info.argc >= 7)
 		sort_case_over7(&info);
-//	stack_debug(&info);
+	stack_debug(&info);
 	free_element(&info);
 }
 

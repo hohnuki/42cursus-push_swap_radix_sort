@@ -59,6 +59,9 @@ void	rrb(t_info *info);
 void	pb(t_info *info);
 void	pa(t_info *info);
 
+//error_message.c
+void	error_message(t_info *info, char *message);
+
 //free.c
 void	free_element(t_info *info);
 
