@@ -80,7 +80,7 @@ int	main(int argc, char **argv)
 		sort_case_under_6(&info);
 	else if(info.argc >= 7)
 		sort_case_over7(&info);
-	stack_debug(&info);
+//	stack_debug(&info);
 	free_element(&info);
 }
 
