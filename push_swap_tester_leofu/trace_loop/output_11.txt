@@ -1,10 +1,9 @@
 pb
 ra
-pb
 ra
 pb
+pb
 sa
-sb
 rb
 pa
 pa
