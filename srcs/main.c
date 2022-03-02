@@ -49,8 +49,6 @@ void	string_to_array(t_info *info)
 	char	**str;
 	int 	i;
 
-	printf("\x1b[36m[strlen = %zu]\n\033[m", ft_strlen(info->argv[1]));
-	printf("\x1b[36m[info->argv[1] = %s]\n\033[m", info->argv[1]);
 	info->stack.a = ft_calloc(ft_strlen(info->argv[1]), sizeof(int));
 	if (info->stack.a == NULL)
 		error_message(info);
@@ -102,7 +100,7 @@ void	stack_argv(t_info *info)
 			j--;
 		}
 	}
-	stack_debug(info);
+//	stack_debug(info);
 	compression_array(info);
 }
 
