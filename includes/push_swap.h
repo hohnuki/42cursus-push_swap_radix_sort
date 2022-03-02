@@ -6,6 +6,7 @@
 #include "string.h"
 #include "limits.h"
 #include "unistd.h"
+#include "stdbool.h"
 #include "../libft//libft.h"
 
 typedef struct s_stack
@@ -63,7 +64,7 @@ void	pa(t_info *info);
 int		ps_atoi(const char *str, t_info *info);
 
 //error_message.c
-void	error_message(t_info *info, char *message);
+void	error_message(t_info *info);
 
 //free.c
 void	free_element(t_info *info);

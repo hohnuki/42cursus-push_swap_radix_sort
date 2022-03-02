@@ -48,16 +48,16 @@ void	stack_argv(t_info *info)
 {
 	info->stack.a = ft_calloc(info->argc, sizeof(int));
 	if (info->stack.a == NULL)
-		error_message(info, "info->stack.a is not allocated.");
+		error_message(info);
 	info->stack.compression_a = ft_calloc(info->argc, sizeof(int));
 	if (info->stack.compression_a == NULL)
-		error_message(info, "info->stack.compression_a is not allocated.");
+		error_message(info);
 	info->stack.b = ft_calloc(info->argc, sizeof(int));
 	if (info->stack.b == NULL)
-		error_message(info, "info->stack.b is not allocated.");
+		error_message(info);
 	info->stack.compression_b = ft_calloc(info->argc, sizeof(int));
 	if (info->stack.compression_b == NULL)
-		error_message(info, "info->stack.compression_b is not allocated.");
+		error_message(info);
 	int i = 0;
 	int	j = info->argc;
 	while (i < info->argc)
@@ -66,6 +66,7 @@ void	stack_argv(t_info *info)
 		i++;
 		j--;
 	}
+//	stack_debug(info);
 	compression_array(info);
 }
 

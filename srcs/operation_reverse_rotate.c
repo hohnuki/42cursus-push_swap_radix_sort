@@ -6,7 +6,7 @@ void	rra(t_info *info)
 	int	tmp_compression_a;
 	int	i;
 
-	printf("rra\n");
+	ft_putendl_fd("rra", 1);
 	i = 0;
 //	printf("\x1b[36m[i = %d]\n\033[m", i);
 	tmp_a = info->stack.a[0];
@@ -34,7 +34,7 @@ void	rrb(t_info *info)
 	int	tmp_compression_b;
 	int	i;
 
-	printf("rrb\n");
+	ft_putendl_fd("rrb", 1);
 	i = 0;
 //	printf("\x1b[36m[i = %d]\n\033[m", i);
 	tmp_b = info->stack.b[0];

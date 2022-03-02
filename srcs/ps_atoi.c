@@ -22,6 +22,15 @@ static int	check_negative(int n_i, int ope_i)
 	return (i);
 }
 
+static void	check_range_int(long long ans, t_info *info)
+{
+	if (ans > INT_MAX || ans < INT_MIN)
+	{
+		error_message(info);
+		exit(EXIT_FAILURE);
+	}
+}
+
 int	ps_atoi(const char *str, t_info *info)
 {
 	size_t		i;
@@ -44,7 +53,7 @@ int	ps_atoi(const char *str, t_info *info)
 	}
 	while (ft_isdigit(str[i]))
 		ans = (ans * 10) + ((str[i++] - '0'));
-	if (ans >= INT_MAX || ans <= INT_MIN)
-		error_message(info, "invalid argv\n");
-	return (ans * check_negative(n_i, ope_i));
+	ans *= check_negative(n_i, ope_i);
+	check_range_int(ans, info);
+	return (ans);
 }

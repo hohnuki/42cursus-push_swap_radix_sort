@@ -2,7 +2,7 @@
 
 void	pa(t_info *info)
 {
-	printf("pa\n");
+	ft_putendl_fd("pa", 1);
 	info->stack.head_a++;
 	info->stack.a[info->stack.head_a] = info->stack.b[info->stack.head_b];
 	info->stack.b[info->stack.head_b] = '\0';
@@ -13,7 +13,7 @@ void	pa(t_info *info)
 
 void	pb(t_info *info)
 {
-	printf("pb\n");
+	ft_putendl_fd("pb", 1);
 	info->stack.head_b++;
 	info->stack.b[info->stack.head_b] = info->stack.a[info->stack.head_a];
 	info->stack.a[info->stack.head_a] = '\0';

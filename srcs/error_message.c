@@ -1,7 +1,7 @@
 #include "../includes/push_swap.h"
 
-void	error_message(t_info *info, char *message)
+void	error_message(t_info *info)
 {
-	ft_putendl_fd(message, 2);
+	ft_putendl_fd("error", STDERR_FILENO);
 	free_element(info);
 }
