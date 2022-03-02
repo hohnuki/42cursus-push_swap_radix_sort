@@ -44,29 +44,65 @@ void	compression_array(t_info *info)
 	}
 }
 
-void	stack_argv(t_info *info)
+void	string_to_array(t_info *info)
 {
-	info->stack.a = ft_calloc(info->argc, sizeof(int));
+	char	**str;
+	int 	i;
+
+	printf("\x1b[36m[strlen = %zu]\n\033[m", ft_strlen(info->argv[1]));
+	printf("\x1b[36m[info->argv[1] = %s]\n\033[m", info->argv[1]);
+	info->stack.a = ft_calloc(ft_strlen(info->argv[1]), sizeof(int));
 	if (info->stack.a == NULL)
 		error_message(info);
-	info->stack.compression_a = ft_calloc(info->argc, sizeof(int));
+	info->stack.compression_a = ft_calloc(ft_strlen(info->argv[1]), sizeof(int));
 	if (info->stack.compression_a == NULL)
 		error_message(info);
-	info->stack.b = ft_calloc(info->argc, sizeof(int));
+	info->stack.b = ft_calloc(ft_strlen(info->argv[1]), sizeof(int));
 	if (info->stack.b == NULL)
 		error_message(info);
-	info->stack.compression_b = ft_calloc(info->argc, sizeof(int));
+	info->stack.compression_b = ft_calloc(ft_strlen(info->argv[1]), sizeof(int));
 	if (info->stack.compression_b == NULL)
 		error_message(info);
-	int i = 0;
-	int	j = info->argc;
-	while (i < info->argc)
+
+	str = ft_split(info->argv[1], ' ');
+	i = 0;
+	while (str[i] != NULL)
 	{
-		info->stack.a[i] = ps_atoi(info->argv[j], info);
+		info->stack.a[i] = ps_atoi(str[i], info);
 		i++;
-		j--;
 	}
-//	stack_debug(info);
+}
+
+
+void	stack_argv(t_info *info)
+{
+	if (ft_strchr(info->argv[1], ' ') != NULL)
+		string_to_array(info);
+	else
+	{
+		info->stack.a = ft_calloc(info->argc, sizeof(int));
+		if (info->stack.a == NULL)
+			error_message(info);
+		info->stack.compression_a = ft_calloc(info->argc, sizeof(int));
+		if (info->stack.compression_a == NULL)
+			error_message(info);
+		info->stack.b = ft_calloc(info->argc, sizeof(int));
+		if (info->stack.b == NULL)
+			error_message(info);
+		info->stack.compression_b = ft_calloc(info->argc, sizeof(int));
+		if (info->stack.compression_b == NULL)
+			error_message(info);
+
+		int i = 0;
+		int	j = info->argc;
+		while (i < info->argc)
+		{
+			info->stack.a[i] = ps_atoi(info->argv[j], info);
+			i++;
+			j--;
+		}
+	}
+	stack_debug(info);
 	compression_array(info);
 }
 
@@ -77,11 +113,6 @@ int	main(int argc, char **argv)
 	if (argc == 1)
 		exit(EXIT_FAILURE);
 	info.argc = argc - 1;
-//	if (info.argc == 1)
-//	{
-//		error_message(&info);
-//		exit(EXIT_FAILURE);
-//	}
 	info.argv = argv;
 	info.stack.head_a = info.argc - 1;
 	info.stack.head_b = -1;
