@@ -63,6 +63,9 @@ void	pa(t_info *info);
 //ps_atoi.c
 int		ps_atoi(const char *str, t_info *info);
 
+//check_duplicate.c
+void	check_duplicate(t_info *info);
+
 //error_message.c
 void	error_message(t_info *info);
 

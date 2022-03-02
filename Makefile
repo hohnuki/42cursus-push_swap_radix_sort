@@ -10,7 +10,7 @@ SRCS = $(SRCS_PATH)main.c $(SRCS_PATH)stack_debug.c $(SRCS_PATH)sort_case_over7.
 		$(SRCS_PATH)operation_rotate.c $(SRCS_PATH)operation_push.c $(SRCS_PATH)sort_case_3.c \
 		$(SRCS_PATH)sort_case_2.c $(SRCS_PATH)operation_swap.c $(SRCS_PATH)free.c \
 		$(SRCS_PATH)operation_reverse_rotate.c $(SRCS_PATH)sort_case_under_6.c $(SRCS_PATH)error_message.c \
-		$(SRCS_PATH)ps_atoi.c
+		$(SRCS_PATH)ps_atoi.c $(SRCS_PATH)check_duplicate.c
 OBJS = $(SRCS:.c=.o)
 
 LIBFTMAKE = $(MAKE) -C $(LIBFT_PATH)

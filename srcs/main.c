@@ -81,6 +81,7 @@ int	main(int argc, char **argv)
 	info.stack.head_a = info.argc - 1;
 	info.stack.head_b = -1;
 	stack_argv(&info);
+	check_duplicate(&info);
 	if (info.argc == 2)
 		sort_case_2(&info);
 	else if (info.argc == 3)
