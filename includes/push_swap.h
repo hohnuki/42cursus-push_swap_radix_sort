@@ -59,6 +59,9 @@ void	rrb(t_info *info);
 void	pb(t_info *info);
 void	pa(t_info *info);
 
+//ps_atoi.c
+int		ps_atoi(const char *str, t_info *info);
+
 //error_message.c
 void	error_message(t_info *info, char *message);
 

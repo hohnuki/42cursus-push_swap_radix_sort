@@ -34,15 +34,6 @@ static int	check_negative(int n_i, int ope_i)
 	return (i);
 }
 
-static int	check_long(long ans, char c, int n_i)
-{
-	if ((ans * 10) + (c - '0') - LONG_MAX >= 0 && n_i % 2 != 1)
-		return (-1);
-	else if ((ans * 10) + (c - '0') + LONG_MIN >= 0 && n_i % 2 == 1)
-		return (0);
-	return (1);
-}
-
 int	ft_atoi(const char *str)
 {
 	size_t		i;
@@ -64,10 +55,6 @@ int	ft_atoi(const char *str)
 		i++;
 	}
 	while (ft_isdigit(str[i]))
-	{
-		if (check_long(ans, str[i], n_i) != 1)
-			return (check_long(ans, str[i], n_i));
 		ans = (ans * 10) + ((str[i++] - '0'));
-	}
 	return (ans * check_negative(n_i, ope_i));
 }

@@ -62,18 +62,19 @@ void	stack_argv(t_info *info)
 	int	j = info->argc;
 	while (i < info->argc)
 	{
-		info->stack.a[i] = ft_atoi(info->argv[j]);
+		info->stack.a[i] = ps_atoi(info->argv[j], info);
 		i++;
 		j--;
 	}
 	compression_array(info);
-	stack_debug(info);
 }
 
 int	main(int argc, char **argv)
 {
 	t_info	info;
 
+	if (argc == 1)
+		exit(EXIT_FAILURE);
 	info.argc = argc - 1;
 	info.argv = argv;
 	info.stack.head_a = info.argc - 1;
@@ -87,7 +88,6 @@ int	main(int argc, char **argv)
 		sort_case_under_6(&info);
 	else if(info.argc >= 7)
 		sort_case_over7(&info);
-	stack_debug(&info);
 	free_element(&info);
 }
 
