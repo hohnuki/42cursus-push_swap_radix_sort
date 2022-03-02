@@ -66,7 +66,7 @@ void	stack_argv(t_info *info)
 		i++;
 		j--;
 	}
-	stack_debug(info);
+//	stack_debug(info);
 	compression_array(info);
 }
 
@@ -77,6 +77,11 @@ int	main(int argc, char **argv)
 	if (argc == 1)
 		exit(EXIT_FAILURE);
 	info.argc = argc - 1;
+//	if (info.argc == 1)
+//	{
+//		error_message(&info);
+//		exit(EXIT_FAILURE);
+//	}
 	info.argv = argv;
 	info.stack.head_a = info.argc - 1;
 	info.stack.head_b = -1;
