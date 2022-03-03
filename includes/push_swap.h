@@ -31,6 +31,9 @@ typedef struct s_info
 //stack_debug.c
 void	stack_debug(t_info *info);
 
+//compression_array.c
+void	compression_array(t_info *info);
+
 //sort_case_2.c
 void	sort_case_2(t_info *info);
 

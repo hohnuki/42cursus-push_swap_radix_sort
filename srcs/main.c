@@ -1,49 +1,5 @@
 #include "../includes/push_swap.h"
 
-void	compression_array(t_info *info)
-{
-	int array[info->argc];
-	int i;
-	int j;
-	int tmp;
-
-	i = 0;
-	while (i < info->argc)
-	{
-		array[i] = info->stack.a[i];
-		i++;
-	}
-	i = 0;
-	tmp = 0;
-	while (i < info->argc)
-	{
-		j = i;
-		while (j < info->argc)
-		{
-			if (array[i] > array[j])
-			{
-				tmp = array[i];
-				array[i] = array[j];
-				array[j] = tmp;
-			}
-			j++;
-		}
-		i++;
-	}
-	i = 0;
-	while (i < info->argc)
-	{
-		j = 0;
-		while (j < info->argc)
-		{
-			if (array[i] == info->stack.a[j])
-				info->stack.compression_a[j] = i;
-			j++;
-		}
-		i++;
-	}
-}
-
 void	string_to_array(t_info *info)
 {
 	char	**str;
@@ -70,7 +26,31 @@ void	string_to_array(t_info *info)
 		info->stack.a[i] = ps_atoi(str[i], info);
 		i++;
 	}
+}
 
+void	argv_to_array(t_info *info)
+{
+	info->stack.a = ft_calloc(info->argc, sizeof(int));
+	if (info->stack.a == NULL)
+		error_message(info);
+	info->stack.compression_a = ft_calloc(info->argc, sizeof(int));
+	if (info->stack.compression_a == NULL)
+		error_message(info);
+	info->stack.b = ft_calloc(info->argc, sizeof(int));
+	if (info->stack.b == NULL)
+		error_message(info);
+	info->stack.compression_b = ft_calloc(info->argc, sizeof(int));
+	if (info->stack.compression_b == NULL)
+		error_message(info);
+
+	int i = 0;
+	int	j = info->argc;
+	while (i < info->argc)
+	{
+		info->stack.a[i] = ps_atoi(info->argv[j], info);
+		i++;
+		j--;
+	}
 }
 
 
@@ -79,31 +59,17 @@ void	stack_argv(t_info *info)
 	if (ft_strchr(info->argv[1], ' ') != NULL)
 		string_to_array(info);
 	else
-	{
-		info->stack.a = ft_calloc(info->argc, sizeof(int));
-		if (info->stack.a == NULL)
-			error_message(info);
-		info->stack.compression_a = ft_calloc(info->argc, sizeof(int));
-		if (info->stack.compression_a == NULL)
-			error_message(info);
-		info->stack.b = ft_calloc(info->argc, sizeof(int));
-		if (info->stack.b == NULL)
-			error_message(info);
-		info->stack.compression_b = ft_calloc(info->argc, sizeof(int));
-		if (info->stack.compression_b == NULL)
-			error_message(info);
-
-		int i = 0;
-		int	j = info->argc;
-		while (i < info->argc)
-		{
-			info->stack.a[i] = ps_atoi(info->argv[j], info);
-			i++;
-			j--;
-		}
-	}
+		argv_to_array(info);
 //	stack_debug(info);
 	compression_array(info);
+}
+
+void	set_basic_date(t_info *info, int argc, char **argv)
+{
+	info->argc = argc - 1;
+	info->argv = argv;
+	info->stack.head_a = info->argc - 1;
+	info->stack.head_b = -1;
 }
 
 int	main(int argc, char **argv)
@@ -112,10 +78,7 @@ int	main(int argc, char **argv)
 
 	if (argc == 1)
 		exit(EXIT_FAILURE);
-	info.argc = argc - 1;
-	info.argv = argv;
-	info.stack.head_a = info.argc - 1;
-	info.stack.head_b = -1;
+	set_basic_date(&info, argc, argv);
 	stack_argv(&info);
 	check_duplicate(&info);
 	if (info.argc == 2)

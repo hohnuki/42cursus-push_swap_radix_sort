@@ -8,9 +8,7 @@ void	rra(t_info *info)
 
 	ft_putendl_fd("rra", 1);
 	i = 0;
-//	printf("\x1b[36m[i = %d]\n\033[m", i);
 	tmp_a = info->stack.a[0];
-//	printf("\x1b[36m[tmp_a = %d]\n\033[m", tmp_a);
 	while (i < info->stack.head_a)
 	{
 		info->stack.a[i] = info->stack.a[i + 1];
@@ -36,9 +34,7 @@ void	rrb(t_info *info)
 
 	ft_putendl_fd("rrb", 1);
 	i = 0;
-//	printf("\x1b[36m[i = %d]\n\033[m", i);
 	tmp_b = info->stack.b[0];
-//	printf("\x1b[36m[tmp_b = %d]\n\033[m", tmp_b);
 	while (i < info->stack.head_b)
 	{
 		info->stack.b[i] = info->stack.b[i + 1];
