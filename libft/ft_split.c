@@ -33,7 +33,7 @@ static char	*str_cutter(const char	*s, size_t start, size_t end)
 	return (ptr);
 }
 
-static size_t	str_separate_count(const char *s, char c)
+size_t	str_separate_count(const char *s, char c)
 {
 	size_t	i;
 	size_t	ret;

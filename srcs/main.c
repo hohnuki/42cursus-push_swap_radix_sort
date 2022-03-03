@@ -62,6 +62,7 @@ void	string_to_array(t_info *info)
 	if (info->stack.compression_b == NULL)
 		error_message(info);
 
+	info->argc = str_separate_count(info->argv[1], ' ');
 	str = ft_split(info->argv[1], ' ');
 	i = 0;
 	while (str[i] != NULL)
@@ -69,6 +70,7 @@ void	string_to_array(t_info *info)
 		info->stack.a[i] = ps_atoi(str[i], info);
 		i++;
 	}
+
 }
 
 
