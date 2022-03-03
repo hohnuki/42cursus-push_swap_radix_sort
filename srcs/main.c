@@ -43,5 +43,6 @@ int	main(int argc, char **argv)
 		sort_case_over7(&info);
 //	stack_debug(&info);
 	free_element(&info);
+	return (0);
 }
 

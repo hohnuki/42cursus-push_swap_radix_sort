@@ -48,9 +48,9 @@ static void	separate_argv_to_(t_info *info)
 			j--;
 			k++;
 		}
+		free_split_str(str);
 		i--;
 	}
-	free (str);
 }
 
 static void	string_to_array(t_info *info)

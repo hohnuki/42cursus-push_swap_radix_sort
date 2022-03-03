@@ -54,7 +54,7 @@ size_t	str_separate_count(const char *s, char c)
 	return (ret);
 }
 
-void	free_splitStr(char **split)
+void	free_split_str(char **split)
 {
 	size_t	i;
 
@@ -105,6 +105,6 @@ char	**ft_split(const char *s, char c)
 	if (!split)
 		return (NULL);
 	if (split_loop(split, s, c) == -1)
-		free_splitStr(split);
+		free_split_str(split);
 	return (split);
 }
