@@ -26,10 +26,11 @@ typedef struct s_info
 	t_stack	stack;
 }	t_info;
 
-//main.c
-
 //stack_debug.c
 void	stack_debug(t_info *info);
+
+//stack_argv.c
+void	stack_argv(t_info *info);
 
 //compression_array.c
 void	compression_array(t_info *info);
