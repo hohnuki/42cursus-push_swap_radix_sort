@@ -1,6 +1,6 @@
 #include "../includes/push_swap.h"
 
-static void	init_structure(t_info *info)
+static void	init_structure(t_info *info)//TODO:info->stackの初期化の有無
 {
 	info->argc = 0;
 	info->argv = NULL;
@@ -29,6 +29,7 @@ int	main(int argc, char **argv)
 	init_structure(&info);
 	set_basic_date(&info, argc, argv);
 	stack_argv(&info);
+//	stack_debug(&info);
 	check_duplicate(&info);
 	if (info.argc == 2)
 		sort_case_2(&info);

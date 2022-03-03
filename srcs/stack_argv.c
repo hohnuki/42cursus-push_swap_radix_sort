@@ -1,48 +1,44 @@
 #include "../includes/push_swap.h"
 
-void	string_to_array(t_info *info)
+static void	memory_allocate(t_info *info, size_t size)
+{
+	info->stack.a = ft_calloc(size, sizeof(int));
+	if (info->stack.a == NULL)
+		error_message(info);
+	info->stack.compression_a = ft_calloc(size, sizeof(int));
+	if (info->stack.compression_a == NULL)
+		error_message(info);
+	info->stack.b = ft_calloc(size, sizeof(int));
+	if (info->stack.b == NULL)
+		error_message(info);
+	info->stack.compression_b = ft_calloc(size, sizeof(int));
+	if (info->stack.compression_b == NULL)
+		error_message(info);
+}
+
+static void	string_to_array(t_info *info)
 {
 	char	**str;
 	int 	i;
+	int		j;
 
-	info->stack.a = ft_calloc(ft_strlen(info->argv[1]), sizeof(int));
-	if (info->stack.a == NULL)
-		error_message(info);
-	info->stack.compression_a = ft_calloc(ft_strlen(info->argv[1]), sizeof(int));
-	if (info->stack.compression_a == NULL)
-		error_message(info);
-	info->stack.b = ft_calloc(ft_strlen(info->argv[1]), sizeof(int));
-	if (info->stack.b == NULL)
-		error_message(info);
-	info->stack.compression_b = ft_calloc(ft_strlen(info->argv[1]), sizeof(int));
-	if (info->stack.compression_b == NULL)
-		error_message(info);
-
+	memory_allocate(info, ft_strlen(info->argv[1]));
 	info->argc = str_separate_count(info->argv[1], ' ');
+	info->stack.head_a = info->argc - 1;
 	str = ft_split(info->argv[1], ' ');
 	i = 0;
-	while (str[i] != NULL)
+	j = info->argc - 1;
+	while (i < info->argc)
 	{
-		info->stack.a[i] = ps_atoi(str[i], info);
+		info->stack.a[i] = ps_atoi(str[j], info);
 		i++;
+		j--;
 	}
 }
 
-void	argv_to_array(t_info *info)
+static void	argv_to_array(t_info *info)
 {
-	info->stack.a = ft_calloc(info->argc, sizeof(int));
-	if (info->stack.a == NULL)
-		error_message(info);
-	info->stack.compression_a = ft_calloc(info->argc, sizeof(int));
-	if (info->stack.compression_a == NULL)
-		error_message(info);
-	info->stack.b = ft_calloc(info->argc, sizeof(int));
-	if (info->stack.b == NULL)
-		error_message(info);
-	info->stack.compression_b = ft_calloc(info->argc, sizeof(int));
-	if (info->stack.compression_b == NULL)
-		error_message(info);
-
+	memory_allocate(info, info->argc);
 	int i = 0;
 	int	j = info->argc;
 	while (i < info->argc)
