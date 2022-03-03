@@ -15,7 +15,6 @@ void	rra(t_info *info)
 		i++;
 	}
 	info->stack.a[info->stack.head_a] = tmp_a;
-
 	i = 0;
 	tmp_compression_a = info->stack.compression_a[0];
 	while (i < info->stack.head_a)
@@ -41,7 +40,6 @@ void	rrb(t_info *info)
 		i++;
 	}
 	info->stack.b[info->stack.head_b] = tmp_b;
-
 	i = 0;
 	tmp_compression_b = info->stack.compression_b[0];
 	while (i < info->stack.head_b)
