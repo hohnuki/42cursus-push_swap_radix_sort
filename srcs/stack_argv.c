@@ -29,26 +29,51 @@ static void	measure_string_size(t_info *info)
 	}
 }
 
+static void	separate_argv_to_(t_info *info)
+{
+	char	**str;
+	int i;
+	int j;
+	int k;
+
+	i = info->argc_hoge;
+	k = 0;
+	while (i > 0)
+	{
+		j = str_separate_count(info->argv[i], ' ');
+		str = ft_split(info->argv[i], ' ');
+		while (str[j - 1] != NULL)
+		{
+			info->stack.a[k] = ps_atoi(str[j - 1], info);
+			j--;
+			k++;
+		}
+		i--;
+	}
+	free (str);
+}
 
 static void	string_to_array(t_info *info)
 {
-	char	**str;
-	int		i;
-	int		j;
-
+//	char	**str;
+//	int		i;
+//	int		j;
 	measure_string_size(info);
+	info->argc -= 1;
+	info->stack.head_a = info->argc - 1;
 	memory_allocate(info, info->argc);
-	str = ft_split(info->argv[1], ' ');//TODO:str[1]だけだとsegvする
-	i = 0;
-	j = info->argc - 1;
-	printf("\x1b[36m[%d]\n\033[m", j);
-	while (i < info->argc)
-	{
-		info->stack.a[i] = ps_atoi(str[j], info);
-		i++;
-		j--;
-	}
-	free(str);
+	separate_argv_to_(info);
+//	str = ft_split(info->argv[1], ' ');
+//	i = 0;
+//	j = info->argc - 1;
+//	printf("\x1b[36m[%d]\n\033[m", j);
+//	while (i < info->argc)
+//	{
+//		info->stack.a[i] = ps_atoi(str[j], info);
+//		i++;
+//		j--;
+//	}
+//	free(str);
 }
 
 static void	argv_to_array(t_info *info)

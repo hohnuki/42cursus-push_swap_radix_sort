@@ -4,6 +4,7 @@ static void	init_structure(t_info *info)//TODO:info->stackの初期化の有無
 {
 	info->argc = 0;
 	info->argv = NULL;
+	info->argc_hoge = 0;
 	info->stack.a = NULL;
 	info->stack.compression_a = NULL;
 	info->stack.b = NULL;
@@ -15,6 +16,7 @@ static void	init_structure(t_info *info)//TODO:info->stackの初期化の有無
 static void	set_basic_date(t_info *info, int argc, char **argv)
 {
 	info->argc = argc - 1;
+	info->argc_hoge = argc - 1;
 	info->argv = argv;
 	info->stack.head_a = info->argc - 1;
 	info->stack.head_b = -1;

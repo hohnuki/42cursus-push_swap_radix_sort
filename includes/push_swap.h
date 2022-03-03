@@ -22,6 +22,7 @@ typedef struct s_stack
 typedef struct s_info
 {
 	int		argc;
+	int 	argc_hoge;
 	char	**argv;
 	t_stack	stack;
 }	t_info;
