@@ -16,24 +16,39 @@ static void	memory_allocate(t_info *info, size_t size)
 		error_message(info);
 }
 
+static void	measure_string_size(t_info *info)
+{
+	int	i;
+
+	i = 1;
+	info->argc = 1;
+	while (info->argv[i] != NULL)
+	{
+		info->argc += str_separate_count(info->argv[i], ' ');
+		i++;
+	}
+}
+
+
 static void	string_to_array(t_info *info)
 {
 	char	**str;
-	int 	i;
+	int		i;
 	int		j;
 
-	memory_allocate(info, ft_strlen(info->argv[1]));
-	info->argc = str_separate_count(info->argv[1], ' ');
-	info->stack.head_a = info->argc - 1;
-	str = ft_split(info->argv[1], ' ');
+	measure_string_size(info);
+	memory_allocate(info, info->argc);
+	str = ft_split(info->argv[1], ' ');//TODO:str[1]だけだとsegvする
 	i = 0;
 	j = info->argc - 1;
+	printf("\x1b[36m[%d]\n\033[m", j);
 	while (i < info->argc)
 	{
 		info->stack.a[i] = ps_atoi(str[j], info);
 		i++;
 		j--;
 	}
+	free(str);
 }
 
 static void	argv_to_array(t_info *info)
