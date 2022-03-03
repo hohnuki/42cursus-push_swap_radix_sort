@@ -31,7 +31,7 @@ int	main(int argc, char **argv)
 	init_structure(&info);
 	set_basic_date(&info, argc, argv);
 	stack_argv(&info);
-//	stack_debug(&info);
+	is_sorted(&info);
 	check_duplicate(&info);
 	if (info.argc == 2)
 		sort_case_2(&info);

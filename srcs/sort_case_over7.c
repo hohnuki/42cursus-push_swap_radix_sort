@@ -29,6 +29,7 @@ void	sort_case_over7(t_info *info)
 			pa(info);
 			pb_count--;
 		}
+		is_sorted(info);
 		i *= 2;
 		k++;
 	}
