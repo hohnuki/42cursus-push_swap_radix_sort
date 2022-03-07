@@ -32,9 +32,9 @@ static void	measure_string_size(t_info *info)
 static void	separate_argv_to_(t_info *info)
 {
 	char	**str;
-	int i;
-	int j;
-	int k;
+	int		i;
+	int		j;
+	int		k;
 
 	i = info->argc_hoge;
 	k = 0;
@@ -64,9 +64,12 @@ static void	string_to_array(t_info *info)
 
 static void	argv_to_array(t_info *info)
 {
+	int	i;
+	int	j;
+
+	i = 0;
+	j = info->argc;
 	memory_allocate(info, info->argc);
-	int i = 0;
-	int	j = info->argc;
 	while (i < info->argc)
 	{
 		info->stack.a[i] = ps_atoi(info->argv[j], info);

@@ -1,6 +1,6 @@
 #include "../includes/push_swap.h"
 
-static void	init_structure(t_info *info)//TODO:info->stackの初期化の有無
+static void	init_structure(t_info *info)
 {
 	info->argc = 0;
 	info->argv = NULL;
@@ -39,10 +39,8 @@ int	main(int argc, char **argv)
 		sort_case_3(&info);
 	else if (info.argc <= 6)
 		sort_case_under_6(&info);
-	else if(info.argc >= 7)
+	else if (info.argc >= 7)
 		sort_case_over7(&info);
-//	stack_debug(&info);
 	free_element(&info);
 	return (0);
 }
-

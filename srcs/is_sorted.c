@@ -2,7 +2,7 @@
 
 void	is_sorted(t_info *info)
 {
-	int i;
+	int	i;
 
 	i = info->stack.head_a;
 	while (i > 0)

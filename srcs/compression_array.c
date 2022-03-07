@@ -2,9 +2,9 @@
 
 static void	bubble_sort(t_info *info, int *array)
 {
-	int i;
-	int j;
-	int tmp;
+	int	i;
+	int	j;
+	int	tmp;
 
 	i = 0;
 	tmp = 0;
@@ -27,7 +27,7 @@ static void	bubble_sort(t_info *info, int *array)
 
 static void	stack_a_to_array(t_info *info, int *array)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (i < info->argc)
@@ -39,9 +39,9 @@ static void	stack_a_to_array(t_info *info, int *array)
 
 void	compression_array(t_info *info)
 {
-	int array[info->argc];
-	int i;
-	int j;
+	int	array[info->argc];
+	int	i;
+	int	j;
 
 	stack_a_to_array(info, array);
 	bubble_sort(info, array);

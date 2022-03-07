@@ -5,10 +5,11 @@ void	sort_case_under_6(t_info *info)
 	int	i;
 
 	i = 0;
-//	stack_debug(info);
 	while (i < info->argc)
 	{
-		if (info->stack.compression_a[info->stack.head_a] == 0 || info->stack.compression_a[info->stack.head_a] == 1 || info->stack.compression_a[info->stack.head_a] == 2)
+		if (info->stack.compression_a[info->stack.head_a] == 0 \
+		|| info->stack.compression_a[info->stack.head_a] == 1 \
+		|| info->stack.compression_a[info->stack.head_a] == 2)
 			pb(info);
 		else
 			ra(info);
@@ -19,7 +20,6 @@ void	sort_case_under_6(t_info *info)
 	else if (info->stack.head_a + 1 == 2)
 		sort_case_2(info);
 	sort_case_3_b(info);
-//	stack_debug(info);
 	pa(info);
 	pa(info);
 	pa(info);

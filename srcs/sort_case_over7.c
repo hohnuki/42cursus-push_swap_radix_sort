@@ -2,10 +2,10 @@
 
 void	sort_case_over7(t_info *info)
 {
-	int i;
-	int j;
-	int k;
-	int pb_count;
+	int	i;
+	int	j;
+	int	k;
+	int	pb_count;
 
 	i = 1;
 	k = 0;
