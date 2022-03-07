@@ -42,7 +42,7 @@ static void	separate_argv_to_(t_info *info)
 	{
 		j = str_separate_count(info->argv[i], ' ');
 		str = ft_split(info->argv[i], ' ');
-		while (str[j - 1] != NULL)
+		while (j - 1 > 0 || j == 1)
 		{
 			info->stack.a[k] = ps_atoi(str[j - 1], info);
 			j--;

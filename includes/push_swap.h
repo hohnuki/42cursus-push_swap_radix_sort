@@ -1,28 +1,28 @@
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-#include "stdio.h"
-#include "stdlib.h"
-#include "string.h"
-#include "limits.h"
-#include "unistd.h"
-#include "stdbool.h"
-#include "../libft//libft.h"
+# include "stdio.h"
+# include "stdlib.h"
+# include "string.h"
+# include "limits.h"
+# include "unistd.h"
+# include "stdbool.h"
+# include "../libft/libft.h"
 
 typedef struct s_stack
 {
 	int	*a;
 	int	*compression_a;
-	int *b;
-	int *compression_b;
-	int head_a;
-	int head_b;
+	int	*b;
+	int	*compression_b;
+	int	head_a;
+	int	head_b;
 }	t_stack;
 
 typedef struct s_info
 {
 	int		argc;
-	int 	argc_hoge;
+	int		argc_hoge;
 	char	**argv;
 	t_stack	stack;
 }	t_info;

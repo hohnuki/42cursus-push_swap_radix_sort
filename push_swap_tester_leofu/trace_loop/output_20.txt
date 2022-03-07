@@ -1,11 +1,2 @@
-pb
-pb
-ra
-ra
-pb
 sa
-sb
-rrb
-pa
-pa
-pa
+rra
