@@ -17,6 +17,7 @@ typedef struct s_stack
 	int	*compression_b;
 	int	head_a;
 	int	head_b;
+	int	pb_count;
 }	t_stack;
 
 typedef struct s_info
@@ -32,6 +33,10 @@ void	stack_debug(t_info *info);
 
 //stack_argv.c
 void	stack_argv(t_info *info);
+void	memory_allocate(t_info *info, size_t size);
+
+//string_to_array.c
+void	string_to_array(t_info *info);
 
 //compression_array.c
 void	compression_array(t_info *info);

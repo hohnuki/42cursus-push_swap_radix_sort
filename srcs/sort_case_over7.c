@@ -1,15 +1,23 @@
 #include "../includes/push_swap.h"
 
+static void	execute_pa(t_info *info)
+{
+	while (info->stack.pb_count > 0)
+	{
+		pa(info);
+		info->stack.pb_count--;
+	}
+	is_sorted(info);
+}
+
 void	sort_case_over7(t_info *info)
 {
 	int	i;
 	int	j;
 	int	k;
-	int	pb_count;
 
 	i = 1;
 	k = 0;
-	pb_count = 0;
 	while (i < info->argc)
 	{
 		j = info->argc - 1;
@@ -18,18 +26,13 @@ void	sort_case_over7(t_info *info)
 			if (((info->stack.compression_a[info->stack.head_a] >> k) & 1) == 0)
 			{
 				pb(info);
-				pb_count++;
+				info->stack.pb_count++;
 			}
 			else
 				ra(info);
 			j--;
 		}
-		while (pb_count > 0)
-		{
-			pa(info);
-			pb_count--;
-		}
-		is_sorted(info);
+		execute_pa(info);
 		i *= 2;
 		k++;
 	}

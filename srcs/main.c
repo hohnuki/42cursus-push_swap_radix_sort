@@ -11,6 +11,7 @@ static void	init_structure(t_info *info)
 	info->stack.compression_b = NULL;
 	info->stack.head_a = 0;
 	info->stack.head_b = 0;
+	info->stack.pb_count = 0;
 }
 
 static void	set_basic_date(t_info *info, int argc, char **argv)

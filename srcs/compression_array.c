@@ -39,10 +39,13 @@ static void	stack_a_to_array(t_info *info, int *array)
 
 void	compression_array(t_info *info)
 {
-	int	array[info->argc];
+	int	*array;
 	int	i;
 	int	j;
 
+	array = malloc(sizeof(int) * info->argc + 1);
+	if (array == NULL)
+		free_element(info);
 	stack_a_to_array(info, array);
 	bubble_sort(info, array);
 	i = 0;
@@ -57,4 +60,5 @@ void	compression_array(t_info *info)
 		}
 		i++;
 	}
+	free (array);
 }
