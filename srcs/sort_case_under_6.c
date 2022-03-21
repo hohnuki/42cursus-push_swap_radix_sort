@@ -2,7 +2,7 @@
 
 void	sort_case_under_6(t_info *info)
 {
-	int	i;
+	size_t	i;
 
 	i = 0;
 	while (i < info->argc)

@@ -12,9 +12,9 @@ static void	execute_pa(t_info *info)
 
 void	sort_case_over7(t_info *info)
 {
-	int	i;
-	int	j;
-	int	k;
+	size_t	i;
+	size_t	j;
+	size_t	k;
 
 	i = 1;
 	k = 0;
@@ -30,7 +30,10 @@ void	sort_case_over7(t_info *info)
 			}
 			else
 				ra(info);
-			j--;
+			if (j != 0)
+				j--;
+			else
+				break ;
 		}
 		execute_pa(info);
 		i *= 2;

@@ -20,7 +20,7 @@ static void	separate_argv_to_(t_info *info)
 	int		j;
 	int		k;
 
-	i = info->argc_hoge;
+	i = info->argc_duplicate;
 	k = 0;
 	while (i > 0)
 	{
@@ -37,7 +37,7 @@ static void	separate_argv_to_(t_info *info)
 	}
 }
 
-void	string_to_array(t_info *info)
+void	character_literal_to_array(t_info *info)
 {
 	measure_string_size(info);
 	info->argc -= 1;

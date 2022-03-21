@@ -2,8 +2,8 @@
 
 void	check_duplicate(t_info *info)
 {
-	int	i;
-	int	j;
+	size_t	i;
+	size_t	j;
 
 	i = 0;
 	while (i < info->argc)

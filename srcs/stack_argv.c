@@ -18,8 +18,8 @@ void	memory_allocate(t_info *info, size_t size)
 
 static void	argv_to_array(t_info *info)
 {
-	int	i;
-	int	j;
+	size_t	i;
+	size_t	j;
 
 	i = 0;
 	j = info->argc;
@@ -35,7 +35,7 @@ static void	argv_to_array(t_info *info)
 void	stack_argv(t_info *info)
 {
 	if (ft_strchr(info->argv[1], ' ') != NULL)
-		string_to_array(info);
+		character_literal_to_array(info);
 	else
 		argv_to_array(info);
 	compression_array(info);

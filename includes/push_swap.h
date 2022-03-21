@@ -11,19 +11,19 @@
 
 typedef struct s_stack
 {
-	int	*a;
-	int	*compression_a;
-	int	*b;
-	int	*compression_b;
-	int	head_a;
-	int	head_b;
-	int	pb_count;
+	int		*a;
+	int		*compression_a;
+	int		*b;
+	int		*compression_b;
+	size_t	head_a;
+	size_t	head_b;
+	size_t	pb_count;
 }	t_stack;
 
 typedef struct s_info
 {
-	int		argc;
-	int		argc_hoge;
+	size_t	argc;
+	size_t	argc_duplicate;
 	char	**argv;
 	t_stack	stack;
 }	t_info;
@@ -35,8 +35,8 @@ void	stack_debug(t_info *info);
 void	stack_argv(t_info *info);
 void	memory_allocate(t_info *info, size_t size);
 
-//string_to_array.c
-void	string_to_array(t_info *info);
+//character_literal_to_array.c
+void	character_literal_to_array(t_info *info);
 
 //compression_array.c
 void	compression_array(t_info *info);

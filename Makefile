@@ -11,7 +11,7 @@ SRCS = $(SRCS_PATH)main.c $(SRCS_PATH)stack_debug.c $(SRCS_PATH)sort_case_over7.
 		$(SRCS_PATH)sort_case_2.c $(SRCS_PATH)operation_swap.c $(SRCS_PATH)free.c \
 		$(SRCS_PATH)operation_reverse_rotate.c $(SRCS_PATH)sort_case_under_6.c $(SRCS_PATH)error_message.c \
 		$(SRCS_PATH)ps_atoi.c $(SRCS_PATH)check_duplicate.c $(SRCS_PATH)compression_array.c \
-		$(SRCS_PATH)stack_argv.c $(SRCS_PATH)is_sorted.c $(SRCS_PATH)string_to_array.c
+		$(SRCS_PATH)stack_argv.c $(SRCS_PATH)is_sorted.c $(SRCS_PATH)character_literal_to_array.c
 OBJS = $(SRCS:.c=.o)
 
 LIBFTMAKE = $(MAKE) -C $(LIBFT_PATH)

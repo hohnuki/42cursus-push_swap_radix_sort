@@ -3,8 +3,8 @@
 static void	init_structure(t_info *info)
 {
 	info->argc = 0;
+	info->argc_duplicate= 0;
 	info->argv = NULL;
-	info->argc_hoge = 0;
 	info->stack.a = NULL;
 	info->stack.compression_a = NULL;
 	info->stack.b = NULL;
@@ -14,10 +14,10 @@ static void	init_structure(t_info *info)
 	info->stack.pb_count = 0;
 }
 
-static void	set_basic_date(t_info *info, int argc, char **argv)
+static void	set_initial_date(t_info *info, int argc, char **argv)
 {
 	info->argc = argc - 1;
-	info->argc_hoge = argc - 1;
+	info->argc_duplicate = info->argc;
 	info->argv = argv;
 	info->stack.head_a = info->argc - 1;
 	info->stack.head_b = -1;
@@ -30,7 +30,7 @@ int	main(int argc, char **argv)
 	if (argc == 1)
 		exit(EXIT_FAILURE);
 	init_structure(&info);
-	set_basic_date(&info, argc, argv);
+	set_initial_date(&info, argc, argv);
 	stack_argv(&info);
 	is_sorted(&info);
 	check_duplicate(&info);
