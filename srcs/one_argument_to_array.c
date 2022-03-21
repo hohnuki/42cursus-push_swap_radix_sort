@@ -37,11 +37,11 @@ static void	separate_argv_to_(t_info *info)
 	}
 }
 
-void	character_literal_to_array(t_info *info)
+void	one_argument_to_array(t_info *info)
 {
 	measure_string_size(info);
 	info->argc -= 1;
 	info->stack.head_a = info->argc - 1;
-	memory_allocate(info, info->argc);
+	stack_memory_allocate(info, info->argc);
 	separate_argv_to_(info);
 }

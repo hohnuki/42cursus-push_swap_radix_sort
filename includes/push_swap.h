@@ -32,11 +32,12 @@ typedef struct s_info
 void	stack_debug(t_info *info);
 
 //stack_argv.c
+void	*xmalloc(t_info *info, size_t size);
 void	stack_argv(t_info *info);
-void	memory_allocate(t_info *info, size_t size);
+void	stack_memory_allocate(t_info *info, size_t size);
 
-//character_literal_to_array.c
-void	character_literal_to_array(t_info *info);
+//one_argument_to_array.c
+void	one_argument_to_array(t_info *info);
 
 //compression_array.c
 void	compression_array(t_info *info);
