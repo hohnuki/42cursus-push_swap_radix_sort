@@ -1,6 +1,6 @@
 #include "../includes/push_swap.h"
 
-void	sort_case_under_6(t_info *info)
+void	sort_case_under_six(t_info *info)
 {
 	size_t	i;
 
@@ -16,10 +16,10 @@ void	sort_case_under_6(t_info *info)
 		i++;
 	}
 	if (info->stack.head_a + 1 == 3)
-		sort_case_3(info);
+		sort_case_three(info);
 	else if (info->stack.head_a + 1 == 2)
-		sort_case_2(info);
-	sort_case_3_b(info);
+		sort_case_two(info);
+	sort_case_three_b(info);
 	pa(info);
 	pa(info);
 	pa(info);

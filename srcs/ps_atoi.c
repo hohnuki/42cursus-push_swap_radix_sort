@@ -14,7 +14,7 @@ static int	check_isspace(char c)
 	return (0);
 }
 
-static int	check_negative(int n_i, t_info *info)
+static int	check_negative(size_t n_i, t_info *info)
 {
 	int	i;
 
@@ -38,7 +38,7 @@ static long long	check_range_int(long long ans, t_info *info)
 int	ps_atoi(const char *str, t_info *info)
 {
 	size_t		i;
-	int			n_i;
+	size_t		n_i;
 	long long	ans;
 
 	i = 0;

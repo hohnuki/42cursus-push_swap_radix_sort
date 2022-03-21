@@ -16,7 +16,7 @@ static void	execute_pb(t_info *info)
 	info->stack.pb_count++;
 }
 
-void	sort_case_over7(t_info *info)
+void	sort_case_over_seven(t_info *info)
 {
 	size_t	binary_digit;
 	size_t	argc_i;

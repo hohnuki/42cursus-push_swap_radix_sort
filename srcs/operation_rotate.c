@@ -2,9 +2,9 @@
 
 void	ra(t_info *info)
 {
-	int	tmp_a;
-	int	tmp_compression_a;
-	int	i;
+	int		tmp_a;
+	int		tmp_compression_a;
+	size_t	i;
 
 	ft_putendl_fd("ra", 1);
 	i = info->stack.head_a;
@@ -27,9 +27,9 @@ void	ra(t_info *info)
 
 void	rb(t_info *info)
 {
-	int	tmp_b;
-	int	tmp_compression_b;
-	int	i;
+	int		tmp_b;
+	int		tmp_compression_b;
+	size_t	i;
 
 	ft_putendl_fd("rb", 1);
 	i = info->stack.head_b;

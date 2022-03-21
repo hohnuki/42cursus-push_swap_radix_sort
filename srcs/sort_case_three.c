@@ -1,6 +1,6 @@
 #include "../includes/push_swap.h"
 
-void	sort_case_3(t_info *info)
+void	sort_case_three(t_info *info)
 {
 	if (info->stack.a[0] > info->stack.a[1] && info->stack.a[1] < \
 	info->stack.a[2] && info->stack.a[0] < info->stack.a[2])
@@ -25,7 +25,7 @@ void	sort_case_3(t_info *info)
 		rra(info);
 }
 
-void	sort_case_3_b(t_info *info)
+void	sort_case_three_b(t_info *info)
 {
 	if (info->stack.b[0] > info->stack.b[1] && info->stack.b[1] < \
 	info->stack.b[2] && info->stack.b[0] < info->stack.b[2])

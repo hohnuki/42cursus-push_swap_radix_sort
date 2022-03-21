@@ -35,13 +35,13 @@ int	main(int argc, char **argv)
 	is_sorted(&info);
 	check_duplicate(&info);
 	if (info.argc == 2)
-		sort_case_2(&info);
+		sort_case_two(&info);
 	else if (info.argc == 3)
-		sort_case_3(&info);
+		sort_case_three(&info);
 	else if (info.argc <= 6)
-		sort_case_under_6(&info);
+		sort_case_under_six(&info);
 	else if (info.argc >= 7)
-		sort_case_over7(&info);
+		sort_case_over_seven(&info);
 	free_element(&info);
 	return (0);
 }

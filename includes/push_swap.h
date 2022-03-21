@@ -42,18 +42,18 @@ void	one_argument_to_array(t_info *info);
 //compression_array.c
 void	compression_array(t_info *info);
 
-//sort_case_2.c
-void	sort_case_2(t_info *info);
+//sort_case_two.c
+void	sort_case_two(t_info *info);
 
-//sort_case_3.c
-void	sort_case_3(t_info *info);
-void	sort_case_3_b(t_info *info);
+//sort_case_thre.c
+void	sort_case_three(t_info *info);
+void	sort_case_three_b(t_info *info);
 
-//sort_case_under_6.c
-void	sort_case_under_6(t_info *info);
+//sort_case_under_six.c
+void	sort_case_under_six(t_info *info);
 
-//sort_case_over7.c
-void	sort_case_over7(t_info *info);
+//sort_case_over_seven.c
+void	sort_case_over_seven(t_info *info);
 
 //operation_swap.c
 void	sa(t_info *info);
