@@ -10,33 +10,35 @@ static void	execute_pa(t_info *info)
 	is_sorted(info);
 }
 
+static void	execute_pb(t_info *info)
+{
+	pb(info);
+	info->stack.pb_count++;
+}
+
 void	sort_case_over7(t_info *info)
 {
-	size_t	i;
-	size_t	j;
-	size_t	k;
+	size_t	binary_digit;
+	size_t	argc_i;
+	size_t	shift_num;
 
-	i = 1;
-	k = 0;
-	while (i < info->argc)
+	binary_digit = 1;
+	shift_num = 0;
+	while (binary_digit < info->argc)
 	{
-		j = info->argc - 1;
-		while (j >= 0)
+		argc_i = info->argc - 1;
+		while (argc_i >= 0)
 		{
-			if (((info->stack.compression_a[info->stack.head_a] >> k) & 1) == 0)
-			{
-				pb(info);
-				info->stack.pb_count++;
-			}
+			if (((info->stack.compression_a[info->stack.head_a] >> shift_num) & 1) == 0)
+				execute_pb(info);
 			else
 				ra(info);
-			if (j != 0)
-				j--;
-			else
+			if (argc_i == 0)
 				break ;
+			argc_i--;
 		}
 		execute_pa(info);
-		i *= 2;
-		k++;
+		binary_digit *= 2;
+		shift_num++;
 	}
 }
