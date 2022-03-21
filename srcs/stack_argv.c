@@ -12,25 +12,25 @@ void	*xmalloc(t_info *info, size_t size)
 
 void	stack_memory_allocate(t_info *info, size_t size)
 {
-	info->stack.a = xmalloc(info, size * sizeof(int));
-	info->stack.compression_a = xmalloc(info, size * sizeof(int));
-	info->stack.b = xmalloc(info, size * sizeof(int));
-	info->stack.compression_b = xmalloc(info, size * sizeof(int));
+	info->stack.a = xmalloc(info, sizeof(int) * size);
+	info->stack.compression_a = xmalloc(info, sizeof(int) * size);
+	info->stack.b = xmalloc(info, sizeof(int) * size);
+	info->stack.compression_b = xmalloc(info, sizeof(int) * size);
 }
 
 static void	one_number_per_argument_to_array(t_info *info)
 {
-	size_t	i;
-	size_t	j;
+	size_t	a_i;
+	size_t	argv_i;
 
-	i = 0;
-	j = info->argc;
+	a_i = 0;
+	argv_i = info->argc;
 	stack_memory_allocate(info, info->argc);
-	while (i < info->argc)
+	while (a_i < info->argc)
 	{
-		info->stack.a[i] = ps_atoi(info->argv[j], info);
-		i++;
-		j--;
+		info->stack.a[a_i] = ps_atoi(info->argv[argv_i], info);
+		a_i++;
+		argv_i--;
 	}
 }
 

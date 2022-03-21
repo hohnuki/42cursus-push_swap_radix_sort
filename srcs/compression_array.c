@@ -25,7 +25,7 @@ static void	bubble_sort(t_info *info, int *array)
 	}
 }
 
-static void	stack_a_to_array(t_info *info, int *array)
+static void	stack_a_duplicate(t_info *info, int *array)
 {
 	size_t	i;
 
@@ -40,25 +40,23 @@ static void	stack_a_to_array(t_info *info, int *array)
 void	compression_array(t_info *info)
 {
 	int	*array;
-	size_t	i;
-	size_t	j;
+	size_t	array_i;
+	size_t	sa_i;
 
-	array = malloc(sizeof(int) * info->argc + 1);
-	if (array == NULL)
-		free_element(info);
-	stack_a_to_array(info, array);
+	array = xmalloc(info, sizeof(int) * info->argc);
+	stack_a_duplicate(info, array);
 	bubble_sort(info, array);
-	i = 0;
-	while (i < info->argc)
+	array_i = 0;
+	while (array_i < info->argc)
 	{
-		j = 0;
-		while (j < info->argc)
+		sa_i = 0;
+		while (sa_i < info->argc)
 		{
-			if (array[i] == info->stack.a[j])
-				info->stack.compression_a[j] = i;
-			j++;
+			if (array[array_i] == info->stack.a[sa_i])
+				info->stack.compression_a[sa_i] = array_i;
+			sa_i++;
 		}
-		i++;
+		array_i++;
 	}
 	free (array);
 }
