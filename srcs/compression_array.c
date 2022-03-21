@@ -4,7 +4,7 @@ static void	bubble_sort(t_info *info, int *array)
 {
 	size_t	i;
 	size_t	j;
-	int	tmp;
+	int		tmp;
 
 	i = 0;
 	tmp = 0;
@@ -39,7 +39,7 @@ static void	stack_a_duplicate(t_info *info, int *array)
 
 void	compression_array(t_info *info)
 {
-	int	*array;
+	int		*array;
 	size_t	array_i;
 	size_t	sa_i;
 
