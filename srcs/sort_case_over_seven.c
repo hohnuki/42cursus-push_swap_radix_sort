@@ -29,7 +29,8 @@ void	sort_case_over_seven(t_info *info)
 		argc_i = info->argc - 1;
 		while (argc_i >= 0)
 		{
-			if (((info->stack.compression_a[info->stack.head_a] >> shift_num) & 1) == 0)
+			if (((info->stack.compression_a[info->stack.head_a] >> \
+			shift_num) & 1) == 0)
 				execute_pb(info);
 			else
 				ra(info);

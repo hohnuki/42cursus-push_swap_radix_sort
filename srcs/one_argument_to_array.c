@@ -16,9 +16,9 @@ static void	measure_string_size(t_info *info)
 static void	separate_argv_to_stack(t_info *info)
 {
 	char	**str;
-	size_t		argc_i;
-	size_t		sep_num;
-	size_t		sa_i;
+	size_t	argc_i;
+	size_t	sep_num;
+	size_t	sa_i;
 
 	argc_i = info->argc_duplicate;
 	sa_i = 0;
@@ -26,7 +26,7 @@ static void	separate_argv_to_stack(t_info *info)
 	{
 		sep_num = str_separate_count(info->argv[argc_i], ' ');
 		str = ft_split(info->argv[argc_i], ' ');
-		while (sep_num  > 0)
+		while (sep_num > 0)
 		{
 			info->stack.a[sa_i] = ps_atoi(str[sep_num - 1], info);
 			sep_num--;

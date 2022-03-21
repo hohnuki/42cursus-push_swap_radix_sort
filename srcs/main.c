@@ -3,7 +3,7 @@
 static void	init_structure(t_info *info)
 {
 	info->argc = 0;
-	info->argc_duplicate= 0;
+	info->argc_duplicate = 0;
 	info->argv = NULL;
 	info->stack.a = NULL;
 	info->stack.compression_a = NULL;
