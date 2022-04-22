@@ -28,6 +28,8 @@ static void	one_number_per_argument_to_array(t_info *info)
 	stack_memory_allocate(info, info->argc);
 	while (a_i < info->argc)
 	{
+		if (ft_strlen(info->argv[argv_i]) > 12)
+			error_message_and_exit(info);
 		info->stack.a[a_i] = ps_atoi(info->argv[argv_i], info);
 		a_i++;
 		argv_i--;

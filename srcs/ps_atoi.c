@@ -1,6 +1,6 @@
 #include "../includes/push_swap.h"
 
-static void	error_message_and_exit(t_info *info)
+void	error_message_and_exit(t_info *info)
 {
 	error_message(info);
 	exit(EXIT_FAILURE);

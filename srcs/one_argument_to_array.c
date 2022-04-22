@@ -28,6 +28,8 @@ static void	separate_argv_to_stack(t_info *info)
 		str = ft_split(info->argv[argc_i], ' ');
 		while (sep_num > 0)
 		{
+			if (ft_strlen(str[sep_num - 1]) > 12)
+				error_message_and_exit(info);
 			info->stack.a[sa_i] = ps_atoi(str[sep_num - 1], info);
 			sep_num--;
 			sa_i++;

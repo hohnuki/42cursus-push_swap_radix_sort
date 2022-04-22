@@ -72,6 +72,7 @@ void	pb(t_info *info);
 void	pa(t_info *info);
 
 //ps_atoi.c
+void	error_message_and_exit(t_info *info);
 int		ps_atoi(const char *str, t_info *info);
 
 //check_duplicate.c
