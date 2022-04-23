@@ -3,7 +3,6 @@
 static void	init_structure(t_info *info)
 {
 	info->argc = 0;
-	info->argc_duplicate = 0;
 	info->argv = NULL;
 	info->stack.a = NULL;
 	info->stack.compression_a = NULL;
@@ -17,7 +16,6 @@ static void	init_structure(t_info *info)
 static void	set_initial_date(t_info *info, int argc, char **argv)
 {
 	info->argc = argc - 1;
-	info->argc_duplicate = info->argc;
 	info->argv = argv;
 	info->stack.head_a = info->argc - 1;
 	info->stack.head_b = -1;

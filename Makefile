@@ -9,7 +9,7 @@ SRCS_FILES = main.c stack_debug.c sort_case_over_seven.c \
 			sort_case_two.c operation_swap.c free.c \
 			operation_reverse_rotate.c sort_case_under_six.c error_message.c \
 			ps_atoi.c check_duplicate.c compression_array.c \
-			stack_argv.c is_sorted.c one_argument_to_array.c
+			stack_argv.c is_sorted.c 
 SRCS		= $(addprefix ./srcs/, $(SRCS_FILES))
 OBJS = $(SRCS:.c=.o)
 

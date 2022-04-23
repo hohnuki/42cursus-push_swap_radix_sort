@@ -38,9 +38,6 @@ static void	one_number_per_argument_to_array(t_info *info)
 
 void	stack_argv(t_info *info)
 {
-	if (ft_strchr(info->argv[1], ' ') != NULL)
-		one_argument_to_array(info);
-	else
-		one_number_per_argument_to_array(info);
+	one_number_per_argument_to_array(info);
 	compression_array(info);
 }
