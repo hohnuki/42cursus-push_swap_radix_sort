@@ -1,7 +1,7 @@
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
 NAME = push_swap
-INCLUDES = includes
+INCLUDES = ./includes
 LIBFT_PATH = ./libft/
 
 SRCS_FILES = main.c sort_case_over_seven.c \
