@@ -34,3 +34,5 @@ fclean : clean
 		$(RM) $(NAME) $(SRCS_OBJS)
 
 re : fclean all
+
+.PHONY : all clean fclean re

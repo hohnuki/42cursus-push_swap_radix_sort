@@ -3,14 +3,14 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: hohnuki <hohnuki@student.42.fr>            +#+  +:+       +#+         #
+#    By: ohnukihiroki <ohnukihiroki@student.42.f    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/01 21:54:36 by ohnukihirok       #+#    #+#              #
-#    Updated: 2021/11/09 17:19:36 by hohnuki          ###   ########.fr        #
+#    Updated: 2022/04/24 12:25:06 by ohnukihirok      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-CC 			= 	gcc
+CC 			= 	cc
 CFLAGS		= 	-Wall -Wextra -Werror -I.
 RM			= 	rm -f
 NAME 		= 	libft.a
@@ -29,7 +29,7 @@ OBJS 		= 	$(SRCS:.c=.o)
 all:			$(NAME)
 
 $(NAME):		$(OBJS)
-				ar -rcs $(NAME) $(OBJS)
+				ar -rc $(NAME) $(OBJS)
 
 clean:
 				$(RM) $(OBJS) $(BONUS_OBJS)
