@@ -27,9 +27,6 @@ typedef struct s_info
 	t_stack	stack;
 }	t_info;
 
-//stack_debug.c
-void	stack_debug(t_info *info);
-
 //stack_argv.c
 void	*xmalloc(t_info *info, size_t size);
 void	stack_argv(t_info *info);
