@@ -30,8 +30,8 @@ int	main(int argc, char **argv)
 	init_structure(&info);
 	set_initial_date(&info, argc, argv);
 	stack_argv(&info);
-	is_sorted(&info);
 	check_duplicate(&info);
+	is_sorted(&info);
 	if (info.argc == 2)
 		sort_case_two(&info);
 	else if (info.argc == 3)
