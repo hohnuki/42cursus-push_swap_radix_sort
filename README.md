@@ -9,15 +9,19 @@ GNU Make
 
 ## 命令
 sa: (swap a)スタックaの先頭の2つの要素を入れ替える。
+
 sb: (swap b)スタックbの先頭の2つの要素を入れ替える。
 
 pa: (push a) bの先頭の要素を取り、aの先頭に置く。
+
 pb: (push b) aの先頭の要素を取り出し、bの先頭に置く。
 
 ra: (rotate a) スタックaのすべての要素を1つずつ上に移動する。
+
 rb: (rotate b) スタックbのすべての要素を1つずつ上に移動する。
 
 rra: (reverse rotate a) スタックaのすべての要素を1つ下に移動する。
+
 rrb: (reverse rotate b) スタックbのすべての要素を1つ下に移動する。
 
 ## 実行方法
